@@ -28,7 +28,8 @@ header {
   justify-content: space-between;
   padding: 20px 10%;
   align-items: center;
-  /* background-color: red; */
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 header .nav-links {
   display: flex;
@@ -36,7 +37,7 @@ header .nav-links {
   gap: 20px;
 }
 header .nav-links a {
-  color: #000000;
+  color: #1a1a1a; /* Um cinza quase preto fica bem moderno */
   font-size: 16px;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -50,7 +51,7 @@ header .nav-links a:hover {
 }
 .navicons i {
   margin-right: 20px;
-  color: #000000;
+  color: #1a1a1a;
   font-size: 25px;
   font-weight: 500;
   transition: all 0.42s ease;
@@ -59,9 +60,175 @@ header .nav-links a:hover {
   transform: scale(1.1);
   color: #eabf21;
 }
+header .nav-links a:hover,
+.navicons i:hover {
+  color: #eabf21;
+}
 #menu-icon {
   font-size: 35px;
   color: #000000;
   z-index: 1001;
   cursor: pointer;
+}
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  margin-top: 80px; /* Para compensar o header fixo */
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* O '0.5' controla a transparência do preto */
+  z-index: 1; /* Fica acima da imagem */
+}
+.banner-text {
+  position: absolute;
+  z-index: 2; /* Fica acima da overlay */
+  color: white; /* Centraliza o texto */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.banner-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #eabf21;
+}
+.banner-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.banner-text a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #eabf21;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.banner-text a:hover {
+  background-color: #d4a71c;
+}
+/* Container que agrupa a foto grande e as pequenas */
+.vitrine-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+/* Quadrado da Imagem Principal */
+.moldura-main {
+  width: 50%;
+  aspect-ratio: 1 / 1; /* Garante que seja um quadrado perfeito */
+  background-color: #000; /* Fundo preto para destacar sua bike */
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* Centraliza a moldura principal */
+  border: 2px solid #eee;
+}
+
+.moldura-main img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain; /* Mostra a bike toda sem cortar */
+  transition: opacity 0.3s ease;
+}
+
+/* Área das Miniaturas (Quadradinhos) */
+.thumbs-area {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Estilo de cada Quadradinho */
+.quadradinho {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #000;
+}
+
+.quadradinho:hover {
+  border-color: #eabf21; /* Cor de destaque da Softbyke */
+  transform: translateY(-3px);
+}
+
+.quadradinho img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ajuste das informações abaixo da vitrine */
+.info-bike {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.info-bike h3 {
+  font-size: 20px;
+  color: #1a1a1a;
+}
+
+.preco {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 10px 0;
+  color: #1a1a1a;
+}
+.preco span {
+  color: #eabf21;
+}
+.btn-comprar {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #eabf21;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.btn-comprar:hover {
+  background-color: #d4a71c;
+}
+.titulo-secao {
+  font-size: 28px;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 40px 0 20px;
 }
